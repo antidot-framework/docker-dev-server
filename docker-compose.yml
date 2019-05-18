@@ -1,0 +1,38 @@
+version: "3"
+
+volumes:
+  redis:
+  app:
+    driver_opts:
+      type: none
+      device: /app
+      o: bind
+
+services:
+
+  nginx:
+    build: ./nginx/
+    ports:
+      - 80:80
+      - 443:443
+    links:
+      - redis
+      - php
+    volumes:
+      - redis:/var/lib/redis
+      - app:/opt/app
+
+  php:
+    build: ./php/
+    expose:
+      - 9000
+    links:
+      - redis
+    volumes:
+      - redis:/var/lib/redis
+      - app:/opt/app
+
+  redis:
+    image: redis:latest
+    volumes:
+      - redis:/var/lib/redis
