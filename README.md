@@ -34,7 +34,7 @@ cd docker-dev-server
 composer create-project antidot-fw/antidot-framework-starter:dev-master ${PWD}/app
 docker-machine create --driver virtualbox [machine-name] 
 docker-machine stop [machine-name]
-vboxmanage sharedfolder add stickers-dev --name "app" --hostpath "${PWD}/app"
+vboxmanage sharedfolder add [machine-name] --name "app" --hostpath "${PWD}/app"
 docker-machine start [machine-name]
 eval "$(docker-machine env [machine-name])"                                             
 ````
