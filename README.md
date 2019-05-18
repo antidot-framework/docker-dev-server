@@ -14,8 +14,8 @@
 ## Installation
 
 ````bash
-git clone
-cd dev-env
+git clone git@github.com:antidot-framework/docker-dev-server.git
+cd docker-dev-server
 composer create-project antidot-fw/antidot-framework-starter:dev-master ${PWD}/app
 ````
 
