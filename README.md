@@ -2,7 +2,7 @@
 
 ## Packages
 
-* PHP 7.3.5
+* PHP 7.4.3
 * Redis
 * Nginx Server
 
@@ -18,7 +18,7 @@
 ````bash
 git clone git@github.com:antidot-framework/docker-dev-server.git
 cd docker-dev-server
-composer create-project antidot-fw/antidot-framework-starter:dev-master ${PWD}/app
+composer create-project antidot-fw/antidot-framework-starter ${PWD}/app
 ````
 
 ### Docker Machine
@@ -46,3 +46,4 @@ eval "$(docker-machine env [machine-name])"
 ````bash
 docker-compose up --build -d
 ````
+Open it on [localhost](http://localhost).
