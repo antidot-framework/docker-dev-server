@@ -19,7 +19,9 @@
 git clone git@github.com:antidot-framework/docker-dev-server.git your-project
 cd your-project
 rm -rf .git
+git init
 ./install.sh
+git commit -m 'Antidot framework app - initial commit'
 ```
 
 ## Usage
