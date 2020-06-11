@@ -3,10 +3,6 @@ version: "3"
 volumes:
   redis:
   app:
-    driver_opts:
-      type: none
-      device: /app
-      o: bind
 
 services:
 
@@ -17,6 +13,8 @@ services:
       - 443:443
     links:
       - redis
+      - php
+    depends_on:
       - php
     volumes:
       - redis:/var/lib/redis
@@ -30,7 +28,8 @@ services:
       - redis
     volumes:
       - redis:/var/lib/redis
-      - app:/opt/app
+      - ./app:/opt/app
+    working_dir: /opt
 
   redis:
     image: redis:latest
