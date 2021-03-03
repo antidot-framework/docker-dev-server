@@ -1,0 +1,12 @@
+name: Docker build
+
+on: [push, pull_request]
+
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build docker-dev-server image
+        run: docker-compose build
