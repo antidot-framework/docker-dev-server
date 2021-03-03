@@ -16,5 +16,3 @@ COPY ./conf.d/redis.ini $PHP_INI_DIR/conf.d/redis.ini
 RUN usermod -u 1000 www-data
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-RUN composer global require hirak/prestissimo
